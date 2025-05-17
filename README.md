@@ -21,3 +21,10 @@ TypeScript:
 let age: number = 25;
 age = "twenty-five";  // ❌ Error: Type 'string' is not assignable to type 'number'
 ```
+
+
+## VS Code Extentions for TypeScript
+* ESLint
+* JavaScript and TypeScript Nightly
+* Live Server
+* Pretty TypeScript Errors
