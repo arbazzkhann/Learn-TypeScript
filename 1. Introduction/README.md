@@ -29,6 +29,15 @@ tsc --version
 tsc file_name.ts
 ```
 
+OR
+
+* No need to compile every time.
+* Just Save.
+```bash
+tsc --watch
+```
+
+
 
 ## Configuring tsconfig.json:
 ```bash
