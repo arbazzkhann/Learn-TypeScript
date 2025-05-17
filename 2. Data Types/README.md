@@ -3,43 +3,43 @@
 ## 🔹 Primitive Data Types:
 These hold single values and are built-in to the language.
 
-* Number:
+1. Number:
     * Used to store numbers like 10, 3.14, etc.
 ```ts
 let age: number = 25;
 ```
 
-* String:
+2. String:
     * Used to store text or characters.
 ```ts
 let name: string = "Arbaz";
 ```
 
-* Boolean:
+3. Boolean:
     * Stores true or false.
 ```ts
 let isOnline: boolean = true;
 ```
 
-* Null:
+4. Null:
     * Represents an empty or no value.
 ```ts
 let value: null = null;
 ```
 
-* Undefined:
+5. Undefined:
     * A variable that is declared but not given a value.
 ```ts
 let data: undefined;
 ```
 
-* Void:
+6. Void:
     * Used for functions that do not return anything.
 ```ts
 function greet(): void { console.log("Hello"); }
 ```
 
-* Symbol (not listed, but also primitive):
+7. Symbol (not listed, but also primitive):
 For functions that never return (like infinite loops or errors).
 ```ts
 function error(): never {
@@ -47,13 +47,13 @@ function error(): never {
 }
 ```
 
-* BigInt :
+8. BigInt :
     * optional for large numbers.
 ```ts
 let bigNumber: bigint = 123456789n;
 ```
 
-* Never:
+9. Never:
     * For **functions** that **never return** (like **infinite loops** or **errors**).
 ```ts
 function error(): never {
@@ -61,7 +61,7 @@ function error(): never {
 }
 ```
 
-* Void:
+10. Void:
     * Used for **functions** that **do not return** anything.
 ```ts
 function greet(): void { console.log("Hello"); }
@@ -71,25 +71,25 @@ function greet(): void { console.log("Hello"); }
 ## 🔹 Non-Primitive Data Types (Complex)
 These are complex types and can hold multiple values or structures.
 
-* Array:
+1. Array:
     * A list of values of the same type.
 ```ts
 let fruits: string[] = ["apple", "banana"];
 ```
 
-* Object:
+2. Object:
     * key-value pairs.
 ```ts
 let user: object = { name: "Arbaz", age: 25 };
 ```
 
-* Tuple:
+3. Tuple:
     * An array with fixed length and types.
 ```ts
 let person: [string, number] = ["Arbaz", 25];
 ```
 
-* Enum:
+4. Enum:
     * A group of named constants (like options).
 ```ts
 enum Direction {
@@ -102,7 +102,7 @@ enum Direction {
 let move: Direction = Direction.Up;
 ```
 
-* Any:
+5. Any:
     * Accepts any type of value.
     * Should be used carefully, as it turns off type checking.
 ```ts
@@ -110,7 +110,7 @@ let value: any = 5;
 value = "hello";  // valid
 ```
 
-* Unknown:
+6. Unknown:
     * Similar to **any**, but **safer**.
     * You must check the type before using it.
 ```ts
@@ -120,7 +120,7 @@ if (typeof input === "string") {
 }
 ```
 
-* Function:
+7. Function:
     * A block of code that does a task and can return a value.
 ```ts
 function add(a: number, b: number): number {
