@@ -1,4 +1,4 @@
-# Datatypes in TypeScript
+# Data Types in TypeScript
 
 ## 🔹 Primitive Data Types:
 These hold single values and are built-in to the language.
