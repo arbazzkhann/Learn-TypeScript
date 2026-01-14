@@ -1,4 +1,4 @@
-//// Creating variables
+// // Creating variables
 // let a: number = 22;
 // let b: string = "Arbaz";
 // let c: boolean = true;
@@ -10,15 +10,25 @@
 // }
 
 
-//object
-let myObj: {} = {
-    name: "Arbaz Khan",
-    city: "New Delhi"
-}
-console.log(myObj);
+// //object
+// let myObj: {} = {
+//     name: "Arbaz Khan",
+//     city: "New Delhi"
+// }
+// console.log(myObj);
 
-let definedObj: {name: string, phone: number} = {
-    name: "Arbaz Khan",
-    phone: 999
-}
-console.log(definedObj);
+// let definedObj: {name: string, phone: number} = {
+//     name: "Arbaz Khan",
+//     phone: 999
+// }
+// console.log(definedObj);
+
+
+//Array
+const myArr: number[] = [22,3,4,53];  //only numbers array
+console.log(myArr);
+
+const myArr2: (number | string)[] = [22, 32, 4, 2, "Arbaz"];  //string and number (Union operator)
+console.log(myArr2);
+
+const myArr3: [number, string, boolean] = [22, "Car", false];  //predefined index's datatype
