@@ -24,11 +24,25 @@
 // console.log(definedObj);
 
 
-//Array
-const myArr: number[] = [22,3,4,53];  //only numbers array
-console.log(myArr);
+// //Array
+// const myArr: number[] = [22,3,4,53];  //only numbers array
+// console.log(myArr);
 
-const myArr2: (number | string)[] = [22, 32, 4, 2, "Arbaz"];  //string and number (Union operator)
-console.log(myArr2);
+// const myArr2: (number | string)[] = [22, 32, 4, 2, "Arbaz"];  //string and number (Union operator)
+// console.log(myArr2);
 
-const myArr3: [number, string, boolean] = [22, "Car", false];  //predefined index's datatype
+// const myArr3: [number, string, boolean] = [22, "Car", false];  //predefined index's datatype
+
+
+// "any" datatype
+let anyValue: any = "Delhi";
+console.log(anyValue);
+
+anyValue = 100;
+console.log(anyValue);
+
+anyValue = {
+    name: "City",
+    city: "Delhi"
+}
+console.log(anyValue);
