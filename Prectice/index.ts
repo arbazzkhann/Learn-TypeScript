@@ -71,10 +71,19 @@
 
 // never
 // never occur or never return
-function infiniteLoop(a: number): never {
-    while(true) {
-        console.log(a);
-        a++;
-    }    
-}
-infiniteLoop(10);
+// function infiniteLoop(a: number): never {
+//     while(true) {
+//         console.log(a);
+//         a++;
+//     }    
+// }
+// infiniteLoop(10);
+
+
+// unknown
+// don't know the value's type
+let notSure: unknown = 33;
+console.log(notSure);
+
+notSure = "Arbaz";
+console.log(notSure);
