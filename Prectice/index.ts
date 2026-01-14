@@ -48,22 +48,33 @@
 // console.log(anyValue);
 
 
-// tuple (like array but fixed index's datatype)
-// tuples are "typed array" with a fixed length and specific, ordered types for each element
+// // tuple (like array but fixed index's datatype)
+// // tuples are "typed array" with a fixed length and specific, ordered types for each element
 // const tuple: [number, string, boolean, undefined] = [100, "Hello", true, undefined];
 // const coordinates: [number, number, number] = [10, 20, 30];
 
 
-// enum 
-// set of named constants
-// if we not define key's value then it considered value as index value.
-enum colors {
-    // APP_NAME = "my_app_name",
-    red = "red",
-    green = "green",
-    yellow = "yellow",
-    orange = "orange",
-}
+// // enum 
+// // set of named constants
+// // if we not define key's value then it considered value as index value.
+// enum colors {
+//     // APP_NAME = "my_app_name",
+//     red = "red",
+//     green = "green",
+//     yellow = "yellow",
+//     orange = "orange",
+// }
 
-const myHouseDetail = `My house color is ${colors.green}`;
-console.log(myHouseDetail);
+// const myHouseDetail = `My house color is ${colors.green}`;
+// console.log(myHouseDetail);
+
+
+// never
+// never occur or never return
+function infiniteLoop(a: number): never {
+    while(true) {
+        console.log(a);
+        a++;
+    }    
+}
+infiniteLoop(10);
