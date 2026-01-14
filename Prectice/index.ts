@@ -34,15 +34,21 @@
 // const myArr3: [number, string, boolean] = [22, "Car", false];  //predefined index's datatype
 
 
-// "any" datatype
-let anyValue: any = "Delhi";
-console.log(anyValue);
+// // "any" datatype
+// let anyValue: any = "Delhi";
+// console.log(anyValue);
 
-anyValue = 100;
-console.log(anyValue);
+// anyValue = 100;
+// console.log(anyValue);
 
-anyValue = {
-    name: "City",
-    city: "Delhi"
-}
-console.log(anyValue);
+// anyValue = {
+//     name: "City",
+//     city: "Delhi"
+// }
+// console.log(anyValue);
+
+
+// tuple (like array but fixed index's datatype)
+// tuples are "typed array" with a fixed length and specific, ordered types for each element
+const tuple: [number, string, boolean, undefined] = [100, "Hello", true, undefined];
+const coordinates: [number, number, number] = [10, 20, 30];
