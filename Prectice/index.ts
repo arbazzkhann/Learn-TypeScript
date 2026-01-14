@@ -52,3 +52,17 @@
 // tuples are "typed array" with a fixed length and specific, ordered types for each element
 const tuple: [number, string, boolean, undefined] = [100, "Hello", true, undefined];
 const coordinates: [number, number, number] = [10, 20, 30];
+
+
+// enum 
+// set of named constants
+// if we not define key's value then it considered value as index value.
+enum colors {
+    red = "red",
+    green = "green",
+    yellow = "yellow",
+    orange = "orange",
+}
+
+const myHouseDetail = `My house color is ${colors.green}`;
+console.log(myHouseDetail);
