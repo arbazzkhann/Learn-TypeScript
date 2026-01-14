@@ -50,14 +50,15 @@
 
 // tuple (like array but fixed index's datatype)
 // tuples are "typed array" with a fixed length and specific, ordered types for each element
-const tuple: [number, string, boolean, undefined] = [100, "Hello", true, undefined];
-const coordinates: [number, number, number] = [10, 20, 30];
+// const tuple: [number, string, boolean, undefined] = [100, "Hello", true, undefined];
+// const coordinates: [number, number, number] = [10, 20, 30];
 
 
 // enum 
 // set of named constants
 // if we not define key's value then it considered value as index value.
 enum colors {
+    // APP_NAME = "my_app_name",
     red = "red",
     green = "green",
     yellow = "yellow",
