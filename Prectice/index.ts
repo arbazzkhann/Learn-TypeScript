@@ -93,11 +93,20 @@
 // }
 
 
-// void
-// nothing returns
-function hello(): void {
-  console.log("Hello world!");
+// // void
+// // nothing returns
+// function hello(): void {
+//   console.log("Hello world!");
 
-  // return "Hello world!"  // gives error
-}
-hello();
+//   // return "Hello world!"  // gives error
+// }
+// hello();
+
+
+// type inference
+let userName = "arbaz"   // typescript infers (assign) the type as string automatically
+
+// type assertion
+let someValue: any = "Hello world";
+let strLength: number = (someValue as string).length;   // assigning type with "as" keyword
+console.log(typeof strLength);   // number
