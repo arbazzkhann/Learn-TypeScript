@@ -82,12 +82,22 @@
 
 // // unknown
 // // don't know the value's type
-let data: unknown = 100;
-data = 10; // OK
-data = "hello"; // OK
+// let data: unknown = 100;
+// data = 10; // OK
+// data = "hello"; // OK
 
-// data.length; // Error: Object is of type 'unknown'
+// // data.length; // Error: Object is of type 'unknown'
 
-if (typeof data === 'string') {
-  console.log(data.length); // OK: type is narrowed to string
+// if (typeof data === 'string') {
+//   console.log(data.length); // OK: type is narrowed to string
+// }
+
+
+// void
+// nothing returns
+function hello(): void {
+  console.log("Hello world!");
+
+  // return "Hello world!"  // gives error
 }
+hello();
