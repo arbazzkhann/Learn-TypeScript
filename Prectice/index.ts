@@ -80,10 +80,14 @@
 // infiniteLoop(10);
 
 
-// unknown
-// don't know the value's type
-let notSure: unknown = 33;
-console.log(notSure);
+// // unknown
+// // don't know the value's type
+let data: unknown = 100;
+data = 10; // OK
+data = "hello"; // OK
 
-notSure = "Arbaz";
-console.log(notSure);
+// data.length; // Error: Object is of type 'unknown'
+
+if (typeof data === 'string') {
+  console.log(data.length); // OK: type is narrowed to string
+}
