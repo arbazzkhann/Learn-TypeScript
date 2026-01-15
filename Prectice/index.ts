@@ -103,10 +103,19 @@
 // hello();
 
 
-// type inference
-let userName = "arbaz"   // typescript infers (assign) the type as string automatically
+// // type inference
+// let userName = "arbaz"   // typescript infers (assign) the type as string automatically
 
-// type assertion
-let someValue: any = "Hello world";
-let strLength: number = (someValue as string).length;   // assigning type with "as" keyword
-console.log(typeof strLength);   // number
+// // type assertion
+// let someValue: any = "Hello world";
+// let strLength: number = (someValue as string).length;   // assigning type with "as" keyword
+// console.log(typeof strLength);   // number
+
+
+
+// Union ( | )
+// allows a value to be "several different types"
+
+let unionType: (string | number | boolean);
+unionType = 22;
+unionType = true;
