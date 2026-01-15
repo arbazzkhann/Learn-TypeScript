@@ -113,9 +113,27 @@
 
 
 
-// Union ( | )
-// allows a value to be "several different types"
+// // Union ( | )
+// // allows a value to be "several different types"
 
-let unionType: (string | number | boolean);
-unionType = 22;
-unionType = true;
+// let unionType: (string | number | boolean);
+// unionType = 22;
+// unionType = true;
+
+
+// type narrowing
+// The process f "refining a variable's type" from a "general", "broader type" (like Union type) 
+// to a "more specific type" with a certain block or context, using runtime checks.
+let id: number | string | boolean;
+
+function achieveNarrowing(id: number | string) {
+    if((typeof id) === 'number') {
+        console.log("Id is a number: ", id);
+    }
+    else {
+        console.log("Id is string: ", id.toUpperCase());
+    }
+}
+achieveNarrowing("xyz");
+achieveNarrowing(24);
+// achieveNarrowing(true); //gives error
