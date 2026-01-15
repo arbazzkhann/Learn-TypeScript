@@ -1,4 +1,4 @@
-// // Creating variables
+// //----------------------------------- Creating variables
 // let a: number = 22;
 // let b: string = "Arbaz";
 // let c: boolean = true;
@@ -10,7 +10,7 @@
 // }
 
 
-// //object
+// //----------------------------------- object
 // let myObj: {} = {
 //     name: "Arbaz Khan",
 //     city: "New Delhi"
@@ -24,7 +24,7 @@
 // console.log(definedObj);
 
 
-// //Array
+// //----------------------------------- Array
 // const myArr: number[] = [22,3,4,53];  //only numbers array
 // console.log(myArr);
 
@@ -34,7 +34,7 @@
 // const myArr3: [number, string, boolean] = [22, "Car", false];  //predefined index's datatype
 
 
-// // "any" datatype
+// //----------------------------------- "any" datatype
 // let anyValue: any = "Delhi";
 // console.log(anyValue);
 
@@ -48,13 +48,14 @@
 // console.log(anyValue);
 
 
-// // tuple (like array but fixed index's datatype)
+// //----------------------------------- tuple 
+// // (like array but fixed index's datatype)
 // // tuples are "typed array" with a fixed length and specific, ordered types for each element
 // const tuple: [number, string, boolean, undefined] = [100, "Hello", true, undefined];
 // const coordinates: [number, number, number] = [10, 20, 30];
 
 
-// // enum 
+// //----------------------------------- enum 
 // // set of named constants
 // // if we not define key's value then it considered value as index value.
 // enum colors {
@@ -69,7 +70,7 @@
 // console.log(myHouseDetail);
 
 
-// never
+// //----------------------------------- never
 // never occur or never return
 // function infiniteLoop(a: number): never {
 //     while(true) {
@@ -80,7 +81,7 @@
 // infiniteLoop(10);
 
 
-// // unknown
+// //----------------------------------- unknown
 // // don't know the value's type
 // let data: unknown = 100;
 // data = 10; // OK
@@ -93,7 +94,7 @@
 // }
 
 
-// // void
+// //----------------------------------- void
 // // nothing returns
 // function hello(): void {
 //   console.log("Hello world!");
@@ -103,7 +104,7 @@
 // hello();
 
 
-// // type inference
+// //----------------------------------- type inference
 // let userName = "arbaz"   // typescript infers (assign) the type as string automatically
 
 // // type assertion
@@ -113,7 +114,7 @@
 
 
 
-// // Union ( | )
+// //----------------------------------- Union ( | )
 // // allows a value to be "several different types"
 
 // let unionType: (string | number | boolean);
@@ -121,7 +122,7 @@
 // unionType = true;
 
 
-// // type narrowing
+// //----------------------------------- type narrowing
 // // The process f "refining a variable's type" from a "general", "broader type" (like Union type) 
 // // to a "more specific type" with a certain block or context, using runtime checks.
 // let id: number | string | boolean;
@@ -140,31 +141,67 @@
 
 
 
-// Interfaces
-// Used to "define shapes or structure of an object".
-interface Person {
+// //----------------------------------- Interfaces
+// // Used to "define shapes or structure of an object".
+// interface Person {
+//     name: string,
+//     age: number,
+//     greet(): void
+// }
+
+// const newPerson: Person = {
+//     name: "Arbaz Khan",
+//     age: 22,
+//     greet: function() {
+//         console.log("Hello");
+//     }
+// }
+
+// newPerson.greet();
+
+
+// //----------------------------------- Interface with function
+// interface MathFn {
+//     (a: number, b: number): number;
+// }
+
+// const addition: MathFn = function (a, b) {
+//     return a + b;
+// }
+// console.log(addition(21, 22));
+
+
+
+//----------------------------------- Type Alias
+// Way to "create a new name for any existing type".
+// Including primitives, complex object types, union types, tuples, and function signatures.
+// Syntax: type AliasName = TypeDefinition;
+
+// Type Alias - Variable
+type UserId = number;  //type alias
+let myUserId: UserId = 22;
+console.log(myUserId);
+
+// Type Alias - Object
+type Person = {
     name: string,
-    age: number,
-    greet(): void
+    age: number
 }
 
-const newPerson: Person = {
-    name: "Arbaz Khan",
+const person1: Person = {
+    name: "Arbaz",
+    age: 22
+}
+console.log(person1);
+
+
+// & -> intersection
+type intersectionObject = Person & {
+    isVarified: boolean
+}
+const person2: intersectionObject = {
+    name: "Arbaz",
+    isVarified: true,
     age: 22,
-    greet: function() {
-        console.log("Hello");
-    }
 }
-
-newPerson.greet();
-
-
-// Interface with function
-interface MathFn {
-    (a: number, b: number): number;
-}
-
-const addition: MathFn = function (a, b) {
-    return a + b;
-}
-console.log(addition(21, 22));
+console.log(person2);
