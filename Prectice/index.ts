@@ -172,36 +172,52 @@
 
 
 
-//----------------------------------- Type Alias
-// Way to "create a new name for any existing type".
-// Including primitives, complex object types, union types, tuples, and function signatures.
-// Syntax: type AliasName = TypeDefinition;
+// //----------------------------------- Type Alias
+// // Way to "create a new name for any existing type".
+// // Including primitives, complex object types, union types, tuples, and function signatures.
+// // Syntax: type AliasName = TypeDefinition;
 
-// Type Alias - Variable
-type UserId = number;  //type alias
-let myUserId: UserId = 22;
-console.log(myUserId);
+// // Type Alias - Variable
+// type UserId = number;  //type alias
+// let myUserId: UserId = 22;
+// console.log(myUserId);
 
-// Type Alias - Object
-type Person = {
-    name: string,
+// // Type Alias - Object
+// type Person = {
+//     name: string,
+//     age: number
+// }
+
+// const person1: Person = {
+//     name: "Arbaz",
+//     age: 22
+// }
+// console.log(person1);
+
+
+// // & -> intersection
+// type intersectionObject = Person & {
+//     isVarified: boolean
+// }
+// const person2: intersectionObject = {
+//     name: "Arbaz",
+//     isVarified: true,
+//     age: 22,
+// }
+// console.log(person2);
+
+
+//----------------------------------- Optional Fields
+// we can make property option with "?" operator
+interface Person {
+    name: string
     age: number
+    phone?: number  //optional field
 }
 
-const person1: Person = {
+//creating object without number (no error)
+const newPerson: Person = {
     name: "Arbaz",
     age: 22
 }
-console.log(person1);
-
-
-// & -> intersection
-type intersectionObject = Person & {
-    isVarified: boolean
-}
-const person2: intersectionObject = {
-    name: "Arbaz",
-    isVarified: true,
-    age: 22,
-}
-console.log(person2);
+console.log(newPerson);
