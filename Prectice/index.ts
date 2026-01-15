@@ -121,19 +121,50 @@
 // unionType = true;
 
 
-// type narrowing
-// The process f "refining a variable's type" from a "general", "broader type" (like Union type) 
-// to a "more specific type" with a certain block or context, using runtime checks.
-let id: number | string | boolean;
+// // type narrowing
+// // The process f "refining a variable's type" from a "general", "broader type" (like Union type) 
+// // to a "more specific type" with a certain block or context, using runtime checks.
+// let id: number | string | boolean;
 
-function achieveNarrowing(id: number | string) {
-    if((typeof id) === 'number') {
-        console.log("Id is a number: ", id);
-    }
-    else {
-        console.log("Id is string: ", id.toUpperCase());
+// function achieveNarrowing(id: number | string) {
+//     if((typeof id) === 'number') {
+//         console.log("Id is a number: ", id);
+//     }
+//     else {
+//         console.log("Id is string: ", id.toUpperCase());
+//     }
+// }
+// achieveNarrowing("xyz");
+// achieveNarrowing(24);
+// // achieveNarrowing(true); //gives error
+
+
+
+// Interfaces
+// Used to "define shapes or structure of an object".
+interface Person {
+    name: string,
+    age: number,
+    greet(): void
+}
+
+const newPerson: Person = {
+    name: "Arbaz Khan",
+    age: 22,
+    greet: function() {
+        console.log("Hello");
     }
 }
-achieveNarrowing("xyz");
-achieveNarrowing(24);
-// achieveNarrowing(true); //gives error
+
+newPerson.greet();
+
+
+// Interface with function
+interface MathFn {
+    (a: number, b: number): number;
+}
+
+const addition: MathFn = function (a, b) {
+    return a + b;
+}
+console.log(addition(21, 22));
