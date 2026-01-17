@@ -25,3 +25,36 @@ console.log(formattedObj({
     age: 22,
     email: "arbaz@arbaz.com"
 }));
+
+
+/*
+    3. Calculate total price: Write a TS function that calculates the total price of an array of product objects.
+       Each product has a price and quantity.
+*/
+interface Product {
+    price: number;
+    quantity: number;
+}
+
+function totalPrice (products: Product[]): number {
+    return products.reduce((total, product) => total + product.price * product.quantity, 0);
+}
+
+
+//usage
+const myPricesArray = [
+    {
+        price: 299,
+        quantity: 45
+    },
+    {
+        price: 499,
+        quantity: 50
+    },
+    {
+        price: 210,
+        quantity: 100
+    }
+]
+
+console.log(totalPrice(myPricesArray));
