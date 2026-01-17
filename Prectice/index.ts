@@ -207,17 +207,72 @@
 // console.log(person2);
 
 
-//----------------------------------- Optional Fields
-// we can make property option with "?" operator
-interface Person {
-    name: string
-    age: number
-    phone?: number  //optional field
+// //----------------------------------- Optional Fields
+// // we can make property option with "?" operator
+// interface Person {
+//     name: string
+//     age: number
+//     phone?: number  //optional field
+// }
+
+// //creating object without number (no error)
+// const newPerson: Person = {
+//     name: "Arbaz",
+//     age: 22
+// }
+// console.log(newPerson);
+
+
+//----------------------------------- Functions
+function add(a: number, b: number) {
+    console.log(a + b);
+}
+add(10, 12);
+
+
+//return
+function subtract(a: number, b: number): number {
+    return a - b;
+}
+console.log(subtract(20,8));
+
+
+//function expression
+const divide = function (a: number, b: number): number {
+    return a / b;
+}
+console.log(divide(12,2));
+
+
+//arrow function
+const myArrowFn = (a: number, b: number): number => {
+    return a + b;
+}
+myArrowFn(12,13);
+
+
+//optional parameters
+function greet(username: string, greeting?: string): string {
+    return `${greeting ? greeting : ""} ${username}`;
+}
+console.log(greet("Hello","Arbaz"));  // Hello Arbaz
+console.log(greet("Arbaz"));        // Arbaz  //optional parameter "greeting" 
+
+
+//default parameters
+function hello(username: string, greeting: string = "Hello"): string {
+    return `${greeting} ${username}`;
+}
+console.log(hello("Arbaz"));    // Hello Arbaz
+console.log(hello("Arbaz", "Hey"));     // Hey Arbaz
+
+
+// function overloading
+function getLength(value: string): number;
+function getLength(value: any[]): number;
+function getLength(value: any): number {
+    return value.length;
 }
 
-//creating object without number (no error)
-const newPerson: Person = {
-    name: "Arbaz",
-    age: 22
-}
-console.log(newPerson);
+console.log(getLength("Hello world"));   // 11 (number)
+console.log(getLength([1,2,5,7]));      //  4 (number)
