@@ -276,3 +276,16 @@ function getLength(value: any): number {
 
 console.log(getLength("Hello world"));   // 11 (number)
 console.log(getLength([1,2,5,7]));      //  4 (number)
+
+
+//rest parameters
+function restParas(food: string, ...price: number[]): string {
+    let total = 0;
+    for(let i=0; i<=price.length; i++) {
+        total += i;
+    }
+    return `${food}, total price: ${total}`
+}
+console.log(restParas("Fruits: ", 22,4,45,5231,23,12,3,12,3,12,3,12));
+
+
