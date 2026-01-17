@@ -42,7 +42,7 @@ function totalPrice (products: Product[]): number {
 
 
 //usage
-const myPricesArray = [
+const myPricesArray: Product[] = [
     {
         price: 299,
         quantity: 45
