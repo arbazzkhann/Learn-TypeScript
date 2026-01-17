@@ -58,3 +58,52 @@ const myPricesArray: Product[] = [
 ]
 
 console.log(totalPrice(myPricesArray));
+
+
+/*
+    4. Define a union type for a vehicle that can either be a Car or Bike with different properties.
+      Write a function to log details based on the vehicle type.
+*/
+
+type CarData = {
+    type: "Car",
+    brand: string,
+    model: string,
+    year: number
+}
+
+type BikeData = {
+    type: "Bike",
+    brand: string,
+    cc: number
+}
+
+type VehicleType = BikeData | CarData;
+
+function getVehicleDetails(vehicle: VehicleType) {
+    if(vehicle.type === "Car") {
+        console.log(`Car: ${vehicle.brand}, ${vehicle.model}, Year: ${vehicle.year}`);
+    }
+    else if(vehicle.type === "Bike") {
+        console.log(`Bike: ${vehicle.brand}, CC: ${vehicle.cc}`);
+    }
+}
+
+
+// Prectice data:
+let myCar: VehicleType = {
+    type: "Car",
+    brand: "Lamborghini",
+    model: "SVJ",
+    year: 2025
+}
+
+let myBike: VehicleType = {
+    type: "Bike",
+    brand: "Kawasaki",
+    cc: 900
+}
+
+// Usage
+getVehicleDetails(myCar);
+getVehicleDetails(myBike);
