@@ -19,36 +19,68 @@
 // console.log(myName.age);
 
 
-// ────────────────────────────────────────── Access Modifiers
-// 1. public: Accessible from anywhere, This is the default if no modifier 
-// 2. private: Accessible within the class
-// 3. protected: Accessible within the class and its subclasses. 
+// // ────────────────────────────────────────── Access Modifiers
+// // 1. public: Accessible from anywhere, This is the default if no modifier 
+// // 2. private: Accessible within the class
+// // 3. protected: Accessible within the class and its subclasses. 
 
-class Car1 {
-    public brand: string;
-    private model: string;
-    protected year: number;
+// class Car1 {
+//     public brand: string;
+//     private model: string;
+//     protected year: number;
 
-    constructor(brand: string, model: string, year: number) {
-        this.brand = brand;
-        this.model = model;
-        this.year = year;
-    }
+//     constructor(brand: string, model: string, year: number) {
+//         this.brand = brand;
+//         this.model = model;
+//         this.year = year;
+//     }
 
-    //getter
-    getModel(): string {
-        return this.model
+//     //getter
+//     getModel(): string {
+//         return this.model
+//     }
+// }
+
+// class Car2 extends Car1 {
+//     year = 1990;
+// }
+
+// const myCar = new Car1("Mahindra", "XUV 700", 2026);
+
+// console.log(myCar.brand);
+// // console.log(myCar.model);   //gives error because private
+// console.log("Model by getter: ", myCar.getModel());   //getting model indirectly
+
+// // console.log(myCar.year);    //gives error because only can use with instance  //only use with inheritance
+
+
+
+// ────────────────────────────────────────── Inheritance
+// Access properties and methods from parent class
+// with "extends" keyword
+
+class Animal {
+    name: string;
+    constructor(name: string) {
+        this.name = name;
+    }   
+
+    makeSount(): void {
+        console.log("A generic sound");
     }
 }
 
-class Car2 extends Car1 {
-    year = 1990;
+// Inherit class
+class Dog extends Animal {
+
+    //method overloading
+    makeSount(): void {
+        console.log("bark bark!");
+    } 
 }
 
-const myCar = new Car1("Mahindra", "XUV 700", 2026);
+const myDog = new Dog("Tommy");
 
-console.log(myCar.brand);
-// console.log(myCar.model);   //gives error because private
-console.log("Model by getter: ", myCar.getModel());   //getting model indirectly
+console.log(myDog.name);
+myDog.makeSount();
 
-// console.log(myCar.year);    //gives error because only can use with instance  //only use with inheritance
