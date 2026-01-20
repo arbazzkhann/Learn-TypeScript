@@ -55,32 +55,60 @@
 
 
 
-// ────────────────────────────────────────── Inheritance
-// Access properties and methods from parent class
-// with "extends" keyword
+// // ────────────────────────────────────────── Inheritance
+// // Access properties and methods from parent class
+// // with "extends" keyword
 
-class Animal {
-    name: string;
-    constructor(name: string) {
-        this.name = name;
-    }   
+// class Animal {
+//     name: string;
+//     constructor(name: string) {
+//         this.name = name;
+//     }   
 
-    makeSount(): void {
-        console.log("A generic sound");
+//     makeSound(): void {
+//         console.log("A generic sound");
+//     }
+// }
+
+// // Inherit class
+// class Dog extends Animal {
+
+//     //method overloading
+//     makeSound(): void {
+//         console.log("bark bark!");
+//     } 
+// }
+
+// const myDog = new Dog("Tommy");
+
+// console.log(myDog.name);
+// myDog.makeSound();
+
+
+
+// ────────────────────────────────────────── Abstract Class
+// It serves as a blueprint for other classes to inherit from. (it is a base class)
+// We cannot creates its instance directly using the "new" keyword.
+// It contain methods and properties marked with the "abstract" keyword that have no implementation in the base class.
+
+abstract class Shape {
+    abstract getArea(): number;  //abstract method must be implemented by child classes
+
+    printArea(): void {
+        console.log("The area is: ", this.getArea());
     }
 }
 
-// Inherit class
-class Dog extends Animal {
+class Rectangle extends Shape {
+    constructor(private width: number, private height: number) {
+        super();   //constructor of parent class 
+    }
 
-    //method overloading
-    makeSount(): void {
-        console.log("bark bark!");
-    } 
+    getArea(): number {
+        return this.width * this.height;
+    }
 }
 
-const myDog = new Dog("Tommy");
-
-console.log(myDog.name);
-myDog.makeSount();
-
+// const myRec = new Shape();  //gives error beacuse we cannot create instance of abstract class
+const myNewRec = new Rectangle(5, 10);
+myNewRec.printArea();
