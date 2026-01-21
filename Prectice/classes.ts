@@ -86,29 +86,66 @@
 
 
 
-// ────────────────────────────────────────── Abstract Class
-// It serves as a blueprint for other classes to inherit from. (it is a base class)
-// We cannot creates its instance directly using the "new" keyword.
-// It contain methods and properties marked with the "abstract" keyword that have no implementation in the base class.
+// // ────────────────────────────────────────── Abstract Class
+// // It serves as a blueprint for other classes to inherit from. (it is a base class)
+// // We cannot creates its instance directly using the "new" keyword.
+// // It contain methods and properties marked with the "abstract" keyword that have no implementation in the base class.
 
-abstract class Shape {
-    abstract getArea(): number;  //abstract method must be implemented by child classes
+// abstract class Shape {
+//     abstract getArea(): number;  //abstract method must be implemented by child classes
 
-    printArea(): void {
-        console.log("The area is: ", this.getArea());
-    }
-}
+//     printArea(): void {
+//         console.log("The area is: ", this.getArea());
+//     }
+// }
 
-class Rectangle extends Shape {
-    constructor(private width: number, private height: number) {
-        super();   //constructor of parent class 
-    }
+// class Rectangle extends Shape {
+//     constructor(private width: number, private height: number) {
+//         super();   //constructor of parent class 
+//     }
 
-    getArea(): number {
-        return this.width * this.height;
-    }
-}
+//     getArea(): number {
+//         return this.width * this.height;
+//     }
+// }
 
-// const myRec = new Shape();  //gives error beacuse we cannot create instance of abstract class
-const myNewRec = new Rectangle(5, 10);
-myNewRec.printArea();
+// // const myRec = new Shape();  //gives error beacuse we cannot create instance of abstract class
+// const myNewRec = new Rectangle(5, 10);
+// myNewRec.printArea();
+
+
+
+// // ────────────────────────────────────────── Getters & Setters
+// // Used to access and modify an object's "private data", 
+// // promoting "encapsulation" by controlling direct access.
+
+// // Getter: method returns the value of the property’s value. A getter is also called an "accessor".
+// // using "get"
+
+// // Setter: method updates the property’s value. A setter is also known as a "mutator".
+// // using "set"
+
+// class Circle {
+//     private _radius: number;
+
+//     constructor(radius: number) {
+//         this._radius = radius;
+//     }
+
+//     //getter
+//     get radius(): number {
+//         return this._radius;
+//     }
+
+//     //setter
+//     set radius(value: number) {
+//         if(value <= 0) throw new Error("Radius must be positive.");
+        
+//         this._radius = value;
+//     }
+// }
+
+// const myCircle = new Circle(20);
+// console.log(myCircle.radius);  // 20  //getter
+// myCircle.radius = 12;                 //setter
+// console.log(myCircle.radius);  // 12
