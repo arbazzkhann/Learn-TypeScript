@@ -119,7 +119,7 @@
 // // Used to access and modify an object's "private data", 
 // // promoting "encapsulation" by controlling direct access.
 
-// // Getter: method returns the value of the property’s value. A getter is also called an "accessor".
+// // Getter: method returns the property’s value. A getter is also called an "accessor".
 // // using "get"
 
 // // Setter: method updates the property’s value. A setter is also known as a "mutator".
