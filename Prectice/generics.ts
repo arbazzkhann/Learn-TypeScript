@@ -16,15 +16,27 @@
 
 
 
-// ────────────────────────────────────────── Generics with Interface
-interface KeyPair <K, V> {
-    key: K;
-    value: V;
+// // ────────────────────────────────────────── generic with Interface
+// interface KeyPair <K, V> {
+//     key: K;
+//     value: V;
+// }
+
+// const myObj: KeyPair <string, boolean> = {
+//     key: "isLogin",
+//     value: false
+// }
+
+// console.log(myObj);
+
+
+
+// ────────────────────────────────────────── generic constraints
+// restricting its type with contraints.
+
+function getLength <T extends {length: number}> (item: T): number {
+    return item.length;
 }
 
-const myObj: KeyPair <string, boolean> = {
-    key: "isLogin",
-    value: false
-}
-
-console.log(myObj);
+const myLength = getLength("item");
+console.log(myLength);
