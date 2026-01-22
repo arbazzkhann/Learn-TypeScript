@@ -31,12 +31,33 @@
 
 
 
-// ────────────────────────────────────────── generic constraints
-// restricting its type with contraints.
+// // ────────────────────────────────────────── generic constraints
+// // restricting its type with contraints.
 
-function getLength <T extends {length: number}> (item: T): number {
-    return item.length;
+// function getLength <T extends {length: number}> (item: T): number {
+//     return item.length;
+// }
+
+// const myLength = getLength("item");
+// console.log(myLength);
+
+
+
+// ────────────────────────────────────────── generic classes
+class Boxes <T> {
+    contents: T;
+
+    constructor(value: T) {
+        this.contents = value;
+    }
+
+    getContents(): T {
+        return this.contents;
+    }
 }
 
-const myLength = getLength("item");
-console.log(myLength);
+const stringBox = new Boxes('Hello');
+console.log(stringBox.getContents());
+
+const numberBox = new Boxes(22);
+console.log(numberBox.getContents());
